@@ -4,7 +4,7 @@ import os
 from dotenv import load_dotenv
 
 load_dotenv()
-URL = os.getenv("DATABASE_URL")
+URL = os.getenv("URL")
 
 engine = create_engine(URL)
 SessionLocal = sessionmaker(engine)
