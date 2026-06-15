@@ -2,7 +2,7 @@ from sqlalchemy.orm import Mapped, mapped_column
 from database import Base
 from typing import Optional
 from datetime import datetime
-from sqlalchemy import ForeignKey
+from sqlalchemy import ForeignKey, func
 
 
 class ClothingCategory(Base):
@@ -56,8 +56,9 @@ class Item(Base):
     in_stock: Mapped[bool]
     source: Mapped[str]
     external_id: Mapped[str]
-    created_at: Mapped[Optional[datetime]]
-    updated_at: Mapped[Optional[datetime]]
+    created_at: Mapped[Optional[datetime]] = mapped_column(server_default=func.now())
+    updated_at: Mapped[Optional[datetime]] = mapped_column(server_default=func.now())
+    
 
 
 
