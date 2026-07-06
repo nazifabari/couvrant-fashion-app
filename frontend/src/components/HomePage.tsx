@@ -1,6 +1,8 @@
 import NavBar from './NavBar'
 import Hero from './Hero'
 import ProductGrid from './ProductGrid'
+import Footer from './Footer'
+
 
 
 
@@ -16,6 +18,7 @@ function HomePage() {
     <NavBar></NavBar>
     <Hero></Hero>
     <ProductGrid></ProductGrid>
+    <Footer></Footer>
 
 
 

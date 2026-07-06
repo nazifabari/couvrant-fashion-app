@@ -5,12 +5,12 @@ function Hero(){
 
 return(
 
-<section className = "flex flex-col justify-center h-[300px] md:h-[550px] lg:h-[550px] " style={{ backgroundImage: `url(${second_option})`,  backgroundSize: 'cover' , backgroundRepeat: 'no-repeat', backgroundPosition : 'center 15%'}}>
+<section className = "flex flex-col justify-center h-[400px] md:h-[550px] lg:h-[550px] " style={{ backgroundImage: `url(${second_option})`,  backgroundSize: 'cover' , backgroundRepeat: 'no-repeat', backgroundPosition : 'center 15%'}}>
 
 
 
 
-    <h1  className =" text-[30px] md:text-[60px] lg:text-[60px] text-[#F5F0E8]  playfair-display-main  px-10 md:px-15 lg:px-20 leading-tight pt-15  ">
+    <h1  className =" text-[40px] md:text-[60px] lg:text-[60px] text-[#F5F0E8]  playfair-display-main  px-10 md:px-15 lg:px-20 leading-tight pt-15  ">
         Modest Fashion, 
         <br />
         All In One Place</h1>
