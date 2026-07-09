@@ -38,10 +38,13 @@ def get_db():
 
 
 @app.get("/items")
-def get_items(db = Depends(get_db)):
-    return { "items" : db.query(Item).all()}
+def get_items(db = Depends(get_db), limit: int = 9, page: int = 1 ):
+    skip = (page - 1) * limit
+    return { "items" : db.query(Item).limit(limit).offset(skip).all() , "total": db.query(Item).count()}
     
     
+    
+
     
 @app.post("/items", response_model=ItemResponse)
 def post_items(item: ItemCreate, db = Depends(get_db)):

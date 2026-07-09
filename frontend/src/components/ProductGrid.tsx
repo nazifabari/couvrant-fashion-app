@@ -4,17 +4,17 @@ import { useState, useEffect } from "react"
 function ProductGrid(){
     
     const [products, setProducts] = useState([])
+    const [pageNumber, setPageNumber] = useState(1)
+    const [total, setTotal] = useState(0)
 
 
     async function fetchProducts() {
-        const result = await fetch(import.meta.env.VITE_API_URL + "/items")
+        const result = await fetch(`${import.meta.env.VITE_API_URL}/items?page=${pageNumber}&limit=6`)
         const data = await result.json()
         setProducts(data.items)
-
+        setTotal(data.total)
     }
-
-    useEffect( ()=> {fetchProducts()}, [])
-
+    useEffect( ()=> {fetchProducts()}, [pageNumber])
 
     return(
 
@@ -42,9 +42,11 @@ function ProductGrid(){
                  })
                 }
 
+            </div>
 
-
-
+            <div className= "flex justify-between pt-20">
+                <button className="bg-[#EBE1D0] rounded-full  px-5 py-3 text-[13px] open-sans-main hover:bg-[#C4B8A0]  active:bg-[#A07830] "       disabled={pageNumber==1}       onClick={() => setPageNumber(pageNumber - 1)}               >← previous</button>
+                <button  className ="bg-[#EBE1D0]  rounded-full px-5 py-3 text-[13px] open-sans-main hover:bg-[#C4B8A0] active:bg-[#A07830] "      disabled={pageNumber==(Math.ceil(total/6))}       onClick={() => setPageNumber(pageNumber + 1)}               >next →</button>
             </div>
 
 
