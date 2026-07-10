@@ -10,12 +10,12 @@ return(
 
 
     <div className="">
-        <h1  className =" text-[40px] md:text-[60px] lg:text-[60px] text-[#F5F0E8]  playfair-display-main  px-10 md:px-15 lg:px-20 leading-tight pt-15  ">
+        <h1  className =" text-[40px] md:text-[60px] lg:text-[60px] text-[#F5F0E8] playfair-display-main px-10 md:px-13  leading-tight pt-40  ">
             Modest Fashion, 
             <br />
             All In One Place</h1>
 
-            <p className = " text-[10px] md:text-[16px] lg:text-[16px] pt-2 md:pt-4 lg:pt-4 px-10 md:px-15 lg:px-20 lg:px-20 open-sans-main text-[#F5F0E8] opacity-80" >
+            <p className = " text-[10px] md:text-[16px] lg:text-[16px] pt-2 md:pt-4 px-10 md:px-13 open-sans-main text-[#F5F0E8] opacity-80" >
                 Discover curated pieces from your favorite brands
             </p>
 

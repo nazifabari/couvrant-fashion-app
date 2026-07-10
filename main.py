@@ -7,6 +7,7 @@ from schemas import ItemResponse
 from fastapi.middleware.cors import CORSMiddleware
 import os
 from dotenv import load_dotenv
+from sqlalchemy import or_
 
 load_dotenv()
 
@@ -38,9 +39,18 @@ def get_db():
 
 
 @app.get("/items")
-def get_items(db = Depends(get_db), limit: int = 9, page: int = 1 ):
+def get_items(db = Depends(get_db), limit: int = 9, page: int = 1, search: str = ""):
     skip = (page - 1) * limit
-    return { "items" : db.query(Item).limit(limit).offset(skip).all() , "total": db.query(Item).count()}
+    query = db.query(Item)
+
+    if search:
+        query = query.filter(or_(
+            Item.name.ilike(f"%{search}%"),
+            Item.brand_name.ilike(f"%{search}%")
+            ))
+        
+    items = query.limit(limit).offset(skip).all()
+    return { "items": items, "total": query.count()}
     
     
     

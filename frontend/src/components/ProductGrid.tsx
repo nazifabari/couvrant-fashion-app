@@ -1,20 +1,33 @@
 
 import { useState, useEffect } from "react"
 
-function ProductGrid(){
+
+type ProductGridProps = {
+  search: string;
+}
+function ProductGrid({search}: ProductGridProps){
     
     const [products, setProducts] = useState([])
     const [pageNumber, setPageNumber] = useState(1)
     const [total, setTotal] = useState(0)
 
 
+
     async function fetchProducts() {
-        const result = await fetch(`${import.meta.env.VITE_API_URL}/items?page=${pageNumber}&limit=6`)
+        const result = await fetch(`${import.meta.env.VITE_API_URL}/items?page=${pageNumber}&limit=6&search=${search}`)
         const data = await result.json()
         setProducts(data.items)
         setTotal(data.total)
     }
     useEffect( ()=> {fetchProducts()}, [pageNumber])
+    useEffect(() => {
+        if (pageNumber === 1) {
+            fetchProducts()
+            
+        } else {
+            setPageNumber(1)
+        }
+        }, [search])
 
     return(
 
