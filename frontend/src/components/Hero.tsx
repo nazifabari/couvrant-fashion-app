@@ -10,7 +10,7 @@ return(
 
 
     <div className="">
-        <h1  className =" text-[40px] md:text-[60px] lg:text-[60px] text-[#F5F0E8] playfair-display-main px-10 md:px-13  leading-tight pt-40  ">
+        <h1  className =" text-[40px] md:text-[60px] lg:text-[60px] text-[#F5F0E8] playfair-display-main px-10 md:px-13  leading-tight pt-45  ">
             Modest Fashion, 
             <br />
             All In One Place</h1>

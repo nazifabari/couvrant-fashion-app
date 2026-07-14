@@ -1,6 +1,6 @@
-from sqlalchemy.orm import Mapped, mapped_column
+from sqlalchemy.orm import Mapped, mapped_column, relationship
 from database import Base
-from typing import Optional
+from typing import Optional, List
 from datetime import datetime
 from sqlalchemy import ForeignKey, func
 
@@ -58,6 +58,7 @@ class Item(Base):
     external_id: Mapped[str]
     created_at: Mapped[Optional[datetime]] = mapped_column(server_default=func.now())
     updated_at: Mapped[Optional[datetime]] = mapped_column(server_default=func.now())
+    item_images: Mapped[List[Image]] = relationship(Image)
     
 
 

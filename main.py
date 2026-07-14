@@ -38,7 +38,7 @@ def get_db():
         db.close()      
 
 
-@app.get("/items")
+@app.get("/items", response_model = ItemResponse)
 def get_items(db = Depends(get_db), limit: int = 9, page: int = 1, search: str = ""):
     skip = (page - 1) * limit
     query = db.query(Item)
