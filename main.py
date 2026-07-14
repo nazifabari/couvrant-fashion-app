@@ -4,6 +4,7 @@ from database import SessionLocal
 from models import Item
 from schemas import ItemCreate
 from schemas import ItemResponse
+from schemas import ItemsResponse
 from fastapi.middleware.cors import CORSMiddleware
 import os
 from dotenv import load_dotenv
@@ -38,7 +39,7 @@ def get_db():
         db.close()      
 
 
-@app.get("/items", response_model = ItemResponse)
+@app.get("/items", response_model = ItemsResponse)
 def get_items(db = Depends(get_db), limit: int = 9, page: int = 1, search: str = ""):
     skip = (page - 1) * limit
     query = db.query(Item)

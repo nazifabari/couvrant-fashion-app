@@ -22,8 +22,8 @@ try:
          db.commit()
          result = db.query(ClothingCategory).filter(ClothingCategory.name == row["category"]).first() #updating result to grab category id
          
-    new_item = Item(name=row["title"], brand_name=row["brand"], product_url = row["url"], color = row["colour"], price = row["selling_price"], 
-                    category_id = result.id, external_id = row["uuid"], source = row["competitor"], in_stock = True, currency = "USD")
+    new_item = Item(name=row["name"], brand_name=row["brand"], product_url = row["url"], color = row["color"], price = row["price"], 
+                    category_id = result.id, external_id = row["external_id"], source = row["brand"], in_stock = True, currency = "USD")
     db.add(new_item)
     db.commit()
     

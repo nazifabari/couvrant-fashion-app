@@ -1,6 +1,6 @@
 from pydantic import BaseModel, ConfigDict
 from datetime import datetime
-from typing import List
+from typing import Optional, List
 
 
 class ImageResponse(BaseModel):
@@ -32,7 +32,7 @@ class ItemResponse(BaseModel):
   id: int 
   created_at : datetime
   name: str 
-  description: str
+  description: Optional[str]
   price: float
   currency: str
   brand_name: str 
@@ -42,7 +42,7 @@ class ItemResponse(BaseModel):
   in_stock: bool
   source : str
   external_id : str
-  images: List[ImageResponse]
+  item_images: List[ImageResponse]
 
 
 class ItemsResponse(BaseModel):
