@@ -38,7 +38,7 @@ class Image(Base):
     id : Mapped[int] = mapped_column(primary_key=True)    
     image_url : Mapped[str]
     item_id : Mapped[int] = mapped_column(ForeignKey("items.id"))
-    image_type : Mapped[str]
+    image_type : Mapped[Optional[str]]
     is_display_image : Mapped[bool]
     display_order: Mapped[Optional[int]]
 

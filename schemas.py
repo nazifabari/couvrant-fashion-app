@@ -8,7 +8,7 @@ class ImageResponse(BaseModel):
   id: int
   image_url: str
   item_id: int
-  image_type: str
+  image_type: Optional[str]
   is_display_image : bool
   display_order: int
 

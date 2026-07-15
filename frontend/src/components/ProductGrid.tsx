@@ -16,14 +16,14 @@ function ProductCard({ product }) {
     return (
         <div >
             <div className= "relative " >
-                <a href={product.product_url}>
-                    <img src = {displayImage.image_url}
-                    className= "rounded-2xl object-cover object-center w-full h-150"/>
+                <a  href={product.product_url}>
+                    <img  src = {displayImage.image_url}
+                    className= "rounded-2xl object-cover object-center w-full h-130 hover:border-5 hover:border-[#C9A96E] "/>
                 </a> 
 
                 <div className= "">
-                    <button className=" w-10 h-10  flex  items-center justify-center absolute top-1/2 left-2 bg-transparent rounded-full hover:bg-[#C4B8A0]  hover:text-[#000000] text-[#C4B8A0] active:bg-[#A07830] text-[12px] "   disabled={img_num==1} onClick={() => setImg_num(img_num - 1)} ><SlArrowLeft /></button>
-                    <button  className =" w-10 h-10 flex  items-center justify-center  absolute top-1/2 right-2 bg-transparent rounded-full text-[12px] text-[#C4B8A0] hover:text-[#000000]  hover:bg-[#C4B8A0] active:bg-[#A07830] " disabled={img_num==product.item_images.length} onClick={() => setImg_num(img_num + 1)}  ><SlArrowRight /></button>
+                    <button className=" w-10 h-10  flex  items-center justify-center absolute top-1/2 left-2 bg-transparent rounded-full hover:bg-[#C9A96E]  hover:text-[#000000] text-[#6B4F0A]/[0.50] active:bg-[#A07830] text-[12px] "   disabled={img_num==1} onClick={() => setImg_num(img_num - 1)} ><SlArrowLeft /></button>
+                    <button  className =" w-10 h-10 flex  items-center justify-center  absolute top-1/2 right-2 bg-transparent rounded-full text-[12px] text-[#6B4F0A]/[0.50] hover:text-[#000000]  hover:bg-[#C9A96E] active:bg-[#A07830] " disabled={img_num==product.item_images.length} onClick={() => setImg_num(img_num + 1)}  ><SlArrowRight /></button>
                 </div>
                  
 
@@ -82,8 +82,8 @@ function ProductGrid({search}: ProductGridProps){
             </div>
 
             <div className= "flex justify-between pt-20">
-                <button className="bg-[#EBE1D0] rounded-full  px-5 py-3 text-[13px] open-sans-main hover:bg-[#C4B8A0]  active:bg-[#A07830] "       disabled={pageNumber==1}       onClick={() => setPageNumber(pageNumber - 1)}               >← previous</button>
-                <button  className ="bg-[#EBE1D0]  rounded-full px-5 py-3 text-[13px] open-sans-main hover:bg-[#C4B8A0] active:bg-[#A07830] "      disabled={pageNumber==(Math.ceil(total/6))}       onClick={() => setPageNumber(pageNumber + 1)}               >next →</button>
+                <button className="bg-[#EBE1D0] rounded-full  px-5 py-3 text-[13px] open-sans-main hover:bg-[#C9A96E]   active:bg-[#A07830] "       disabled={pageNumber==1}       onClick={() => setPageNumber(pageNumber - 1)}               >← previous</button>
+                <button  className ="bg-[#EBE1D0]  rounded-full px-5 py-3 text-[13px] open-sans-main hover:bg-[#C9A96E] active:bg-[#A07830] "      disabled={pageNumber==(Math.ceil(total/6))}       onClick={() => setPageNumber(pageNumber + 1)}               >next →</button>
             </div>
 
         </section>

@@ -5,7 +5,7 @@ function Hero(){
 
 return(
 
-<section className = "flex flex-col justify-center h-[300px] md:h-[500px] lg:h-[600px] " style={{ backgroundImage: `url(${second_option})`,  backgroundSize: 'cover' , backgroundRepeat: 'no-repeat', backgroundPosition : 'center 15%'}}>
+<section id="home"  className = "flex flex-col justify-center h-[300px] md:h-[300px] lg:h-[500px] " style={{ backgroundImage: `url(${second_option})`,  backgroundSize: 'cover' , backgroundRepeat: 'no-repeat', backgroundPosition : 'center 15%'}}>
 
 
 
